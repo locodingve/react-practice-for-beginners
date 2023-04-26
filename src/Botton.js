@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import styles from "./Button.module.scss";
 
-function Button({ text }) {
-  return <button className={styles.title}>{text}</button>;
+function Button({ text, onClick }) {
+  return <button className={styles.title} onClick={onClick}>{text}</button>;
 }
 
 Button.propTypes = {
