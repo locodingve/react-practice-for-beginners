@@ -1,7 +1,7 @@
 import styles from "./Button.module.scss";
 
-function Button({ onClick, showing }) {
-  return <button className={styles.title} onClick={onClick}>{ showing? 'Hide' : 'Show'}</button>;
+function Button({ text }) {
+  return <button className={styles.title} >{text}</button>;
 }
 
 
