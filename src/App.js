@@ -2,37 +2,28 @@ import { useState, useEffect } from 'react';
 import Button from './Botton';
 import styles from './App.module.scss';
 
-
-function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState('');
-
-  const onClick = () => setValue((prev) => prev + 1);
-  const onChange = (e) => setKeyword(e.target.value);
-
-  console.log('I run all the time');
-  useEffect( () => {
-    console.log('CALL THE API .....');
+function Hello() {
+  useEffect(function () {
+    console.log('hi1 :) ');
+    return function() {
+      console.log('bye1 :( ')
+    }
   }, []);
   useEffect(() => {
-    console.log('I run when "keyword" changes.');
-  }, [keyword]);
-  useEffect(() => {
-    console.log('I run when "counter" changes.');
-  }, [counter]);
-  useEffect(() => {
-    console.log('I run when keyword & counter change');
-  }, [keyword, counter]);
+    console.log('hi :) ');
+    return () => console.log('bye :( ');
+  }, []);
+  return <h1 className={styles.title}>Hello</h1>;
+}
+
+function App() {
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prve) => !prve);
+  console.log("APP.....");
   return (
     <div>
-      <input 
-        value={keyword} 
-        onChange={onChange}
-        type='text'
-        placeholder='Search here ...'
-      />
-      <h1 className={styles.title}>{counter}</h1>
-      <Button onClick={onClick} text={'click me'} />
+      {showing && <Hello />}
+      <Button onClick={onClick} showing={showing} />
     </div>
   );
 }
