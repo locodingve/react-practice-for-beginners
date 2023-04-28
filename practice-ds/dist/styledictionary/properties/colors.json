@@ -1,10 +1,13 @@
 {
   "color": {
-    "pds_botton_main": {
-      "value": "#ff6347ff"
+    "pds_backgrount_main": {
+      "value": "#eff3f7ff"
     },
-    "pds_main": {
-      "value": "#ffffffff"
+    "pds_color_font_main": {
+      "value": "#2c2c2cff"
+    },
+    "pds_color_font_sub": {
+      "value": "#adaeb9ff"
     }
   }
 }
